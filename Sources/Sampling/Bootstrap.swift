@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Bootstrap<T>{
+public class Bootstrap<T>{
     
     private var instanceList: [T]
 

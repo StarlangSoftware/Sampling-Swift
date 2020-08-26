@@ -7,7 +7,7 @@
 
 import Foundation
 
-class KFoldCrossValidation<T> : CrossValidation<T>{
+public class KFoldCrossValidation<T> : CrossValidation<T>{
     
     private var instanceList: [T]
     private var N: Int

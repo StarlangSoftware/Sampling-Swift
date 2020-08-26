@@ -7,6 +7,6 @@
 
 import Foundation
 
-class CrossValidation<T> {
+public class CrossValidation<T> {
     var K: Int = 10
 }

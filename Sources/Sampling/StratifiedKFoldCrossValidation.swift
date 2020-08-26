@@ -7,7 +7,7 @@
 
 import Foundation
 
-class StratifiedKFoldCrossValidation<T>: CrossValidation<T>{
+public class StratifiedKFoldCrossValidation<T>: CrossValidation<T>{
     
     private var instanceLists: [[T]]
     private var N: [Int]
