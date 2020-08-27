@@ -22,7 +22,7 @@ public class StratifiedKFoldCrossValidation<T>: CrossValidation<T>{
         - K : K in K-fold cross-validation
         - seed : Random number to create K-fold sample(s)
     */
-    init(instanceLists: [[T]], K: Int, seed: Int){
+    public init(instanceLists: [[T]], K: Int, seed: Int){
         self.instanceLists = instanceLists
         self.N = []
         for i in 0..<instanceLists.count{

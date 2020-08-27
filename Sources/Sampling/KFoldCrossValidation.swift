@@ -21,7 +21,7 @@ public class KFoldCrossValidation<T> : CrossValidation<T>{
         - K : K in K-fold cross-validation
         - seed : Random number to create K-fold sample(s)
     */
-    init(instanceList: [T], K: Int, seed: Int){
+    public init(instanceList: [T], K: Int, seed: Int){
         self.instanceList = instanceList
         self.N = instanceList.count
         super.init()

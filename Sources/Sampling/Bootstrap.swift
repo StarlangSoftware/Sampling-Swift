@@ -19,7 +19,7 @@ public class Bootstrap<T>{
         - instanceList : Original sample
         - seed : Random number to create boostrap sample
     */
-    init(instanceList: [T], seed: Int){
+    public init(instanceList: [T], seed: Int){
         let N : Int = instanceList.count
         self.instanceList = []
         for _ in 0..<N{
