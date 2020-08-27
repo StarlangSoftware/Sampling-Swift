@@ -39,7 +39,7 @@ public class StratifiedKFoldCrossValidation<T>: CrossValidation<T>{
 
     - Returns: Produced training sample
     */
-    func getTrainFold(k: Int) -> [T]{
+    public func getTrainFold(k: Int) -> [T]{
         var trainFold : [T] = []
         for i in 0..<self.N.count{
             for j in 0..<k * self.N[i] / self.K{
@@ -59,7 +59,7 @@ public class StratifiedKFoldCrossValidation<T>: CrossValidation<T>{
 
     - Returns: Produced testing sample
     */
-    func getTestFold(k: Int) -> [T]{
+    public func getTestFold(k: Int) -> [T]{
         var testFold : [T] = []
         for i in 0..<self.N.count{
             for j in k * self.N[i] / self.K..<(k + 1) * self.N[i] / self.K{

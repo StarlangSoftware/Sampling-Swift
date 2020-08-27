@@ -32,7 +32,7 @@ public class Bootstrap<T>{
 
     - Returns: Produced bootstrap sample
     */
-    func getSample() -> [T]{
+    public func getSample() -> [T]{
         return self.instanceList
     }
 
