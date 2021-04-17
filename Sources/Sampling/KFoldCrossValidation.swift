@@ -35,7 +35,7 @@ public class KFoldCrossValidation<T> : CrossValidation<T>{
 
     - Returns: Produced training sample
     */
-    public func getTrainFold(k: Int) -> [T]{
+    public override func getTrainFold(k: Int) -> [T]{
         var trainFold : [T] = []
         for i in 0..<k * self.N / self.K{
             trainFold.append(self.instanceList[i])
@@ -53,7 +53,7 @@ public class KFoldCrossValidation<T> : CrossValidation<T>{
 
     - Returns: Produced testing sample
     */
-    public func getTestFold(k: Int) -> [T]{
+    public override func getTestFold(k: Int) -> [T]{
         var testFold : [T] = []
         for i in k * self.N / self.K..<(k + 1) * self.N / self.K{
             testFold.append(self.instanceList[i])
