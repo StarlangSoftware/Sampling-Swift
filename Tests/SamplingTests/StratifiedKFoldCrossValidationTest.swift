@@ -28,19 +28,19 @@ final class StratifiedKFoldCrossValidationTest: XCTestCase {
 
     func testSmallSample10Fold(){
         let stratifiedKFoldCrossValidation : StratifiedKFoldCrossValidation<String> = StratifiedKFoldCrossValidation<String>(instanceLists: self.smallSample, K: 10, seed: 1)
-        let expected1 : [String] = ["1", "11", "12"]
+        let expected1 : [String] = ["1", "21", "19"]
         XCTAssertEqual(expected1, stratifiedKFoldCrossValidation.getTestFold(k: 0))
     }
 
     func testSmallSample5Fold(){
         let stratifiedKFoldCrossValidation : StratifiedKFoldCrossValidation<String> = StratifiedKFoldCrossValidation<String>(instanceLists: self.smallSample, K: 5, seed: 1)
-        let expected2 : [String] = ["1", "2", "11", "12", "13", "14"]
+        let expected2 : [String] = ["1", "5", "21", "19", "29", "13"]
         XCTAssertEqual(expected2, stratifiedKFoldCrossValidation.getTestFold(k: 0))
     }
 
     func testSmallSample2Fold(){
         let stratifiedKFoldCrossValidation : StratifiedKFoldCrossValidation<String> = StratifiedKFoldCrossValidation<String>(instanceLists: self.smallSample, K: 2, seed: 1)
-        let expected3 : [String] = ["1", "2", "3", "4", "5", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20"]
+        let expected3 : [String] = ["1", "5", "10", "7", "3", "21", "19", "29", "13", "16", "23", "28", "18", "14", "12"]
         XCTAssertEqual(expected3, stratifiedKFoldCrossValidation.getTestFold(k: 0))
     }
 

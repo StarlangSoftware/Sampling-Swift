@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Util
 
 public class StratifiedKFoldCrossValidation<T>: CrossValidation<T>{
     
@@ -23,9 +24,16 @@ public class StratifiedKFoldCrossValidation<T>: CrossValidation<T>{
         - seed : Random number to create K-fold sample(s)
     */
     public init(instanceLists: [[T]], K: Int, seed: Int){
+        let random = Random(seed: seed)
         self.instanceLists = instanceLists
         self.N = []
         for i in 0..<instanceLists.count{
+            for k in stride(from: self.instanceLists[i].count - 1, to: 0, by: -1){
+                let randomIndex = random.nextInt(maxRange: k + 1)
+                let tmp = self.instanceLists[i][k]
+                self.instanceLists[i][k] = self.instanceLists[i][randomIndex]
+                self.instanceLists[i][randomIndex] = tmp
+            }
             self.N.append(instanceLists[i].count)
         }
         super.init()

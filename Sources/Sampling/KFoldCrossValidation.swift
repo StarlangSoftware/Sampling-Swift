@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Util
 
 public class KFoldCrossValidation<T> : CrossValidation<T>{
     
@@ -24,6 +25,13 @@ public class KFoldCrossValidation<T> : CrossValidation<T>{
     public init(instanceList: [T], K: Int, seed: Int){
         self.instanceList = instanceList
         self.N = instanceList.count
+        let random = Random(seed: seed)
+        for i in stride(from: instanceList.count - 1, to: 0, by: -1){
+            let randomIndex = random.nextInt(maxRange: i + 1)
+            let tmp = self.instanceList[i]
+            self.instanceList[i] = self.instanceList[randomIndex]
+            self.instanceList[randomIndex] = tmp
+        }
         super.init()
         self.K = K
     }

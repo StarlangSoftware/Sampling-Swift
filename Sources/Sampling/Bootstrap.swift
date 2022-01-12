@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Util
 
 public class Bootstrap<T>{
     
@@ -20,10 +21,11 @@ public class Bootstrap<T>{
         - seed : Random number to create boostrap sample
     */
     public init(instanceList: [T], seed: Int){
+        let random = Random(seed: seed)
         let N : Int = instanceList.count
         self.instanceList = []
         for _ in 0..<N{
-            self.instanceList.append(instanceList[Int.random(in: 0..<N - 1)])
+            self.instanceList.append(instanceList[random.nextInt(maxRange: N)])
         }
     }
 

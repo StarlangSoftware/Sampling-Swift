@@ -21,13 +21,13 @@ final class KFoldCrossValidationTest: XCTestCase {
 
     func testSmallSample5Fold(){
         let kFoldCrossValidation : KFoldCrossValidation = KFoldCrossValidation(instanceList: self.smallSample, K: 5, seed: 1)
-        let expected2 : [String] = ["1", "2"]
+        let expected2 : [String] = ["1", "5"]
         XCTAssertEqual(expected2, kFoldCrossValidation.getTestFold(k: 0))
     }
 
     func testSmallSample2Fold(){
         let kFoldCrossValidation : KFoldCrossValidation = KFoldCrossValidation(instanceList: self.smallSample, K: 2, seed: 1)
-        let expected3 : [String] = ["1", "2", "3", "4", "5"]
+        let expected3 : [String] = ["1", "5", "10", "7", "3"]
         XCTAssertEqual(expected3, kFoldCrossValidation.getTestFold(k: 0))
     }
 
