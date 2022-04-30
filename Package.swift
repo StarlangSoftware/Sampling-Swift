@@ -12,7 +12,7 @@ let package = Package(
             targets: ["Sampling"]),
     ],
     dependencies: [
-        .package(name: "Util", url: "https://github.com/StarlangSoftware/Util-Swift.git", .exact("1.0.6")),
+        .package(name: "Util", url: "https://github.com/StarlangSoftware/Util-Swift.git", .exact("1.0.8")),
     ],
     targets: [
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
